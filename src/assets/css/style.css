@@ -1,0 +1,497 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    /* padding: 0 40px; */
+}
+
+body {
+    background: url('../img/main-2.jpg') center/cover;
+}
+
+:root {
+    --main--сolor: #fff;
+    --second--color: #000;
+    --weight: 600;
+    --tabSize: 16px;
+    --titleSize: 25px;
+    --tabTransform: uppercase;
+    --creepFont: 'Creepster', cursive;
+
+}
+
+/* Для табов */
+
+.hide {
+    display: none;
+}
+.show {
+    display: block;
+}
+
+/* Header */
+
+.header {
+    border-bottom: 1px solid #fff;
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 30px 0;
+}
+
+.header__title {
+    font-size: 20px;
+    font-weight: 600;
+    font-family: var(--creepFont);
+}
+
+.header__list {
+    display: flex;
+}
+
+.header__item {
+    text-transform: var(--tabTransform);
+    margin-right: 40px;
+    font-size: var(--tabSize);
+    font-family: var(--creepFont);
+}
+
+/* About */
+
+.about {
+    border-bottom: 1px solid #fff;
+    padding-bottom: 30px;
+}
+.about .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 30px;
+}
+
+.about__me {
+    max-width: 500px;
+    /* height: auto; */
+}
+
+.about__me-title {
+    font-size: var(--titleSize);
+    margin-bottom: 5px;
+}
+
+.about__me-text {
+    margin-bottom: 20px;
+}
+
+.contacts {
+    display: flex;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.contacts__title {
+    margin-right: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: "Lato", sans-serif;
+}
+
+.contacts__title div {
+    margin-bottom: 10px;
+}
+
+.contacts__info div, .contacts__info address {
+    margin-bottom: 10px;
+    font-family: "Lato", sans-serif;
+    opacity: 0.8;
+} 
+
+.about__img img {
+    height: auto;
+    width: 100%;
+    max-width: 500px;
+}
+
+.contacts__btn {
+    cursor: pointer;
+    text-align: center;
+    width: 150px;
+    transition: all 0.5s linear;
+    padding: 15px 0;
+    border: 1px solid #fff;
+    box-shadow: 0 0 10px #fff;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.contacts__btn:hover {
+    box-shadow: 0 0 10px rgb(83, 5, 5);
+}
+
+.contacts__btn:hover span  {
+    transition: all 0.5s linear;
+}
+
+.contacts__btn:hover span {
+    display: block;
+    transform: rotate(720deg);
+}
+
+/* Skills */
+
+.skills {
+    position: relative;
+    /* background: rgba(228, 212, 212, 0.603); */
+}
+
+.skills .container {
+    padding: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.skills__title {
+    font-size: var(--titleSize);
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+.skills__block{
+    position: relative;
+    background: rgb(204, 184, 164);
+    height: 250px;
+    width: 100%;
+    max-width: 280px;
+    transition: all 0.3s linear;
+}
+
+.skills__block:nth-child(n+2):nth-child(-n+3):hover {
+    transform: scale3d(1,1.1,1);
+}
+
+.skills__btn {
+    position: absolute;
+    top: 50%;
+    left: 32%;
+    font-size: 18px;
+    z-index: 10;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+.skills__img {
+    position: absolute;
+    z-index: 1;
+    opacity: 0.2;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.skills__item {
+    margin: 0 auto;
+}
+
+/* skills Modal */
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+    width: 300px;
+    height: 500px;
+    border-radius: 10px;
+}
+
+.skills__modal {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    /* display: none; */
+    background: url('../img/vscode.jpg') center/cover;
+}
+
+.close__iconic {
+    position: absolute;
+    right: 0;
+    top: -20px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    /* background: #fff; */
+}
+
+.close__iconic:hover {
+    background: rgba(63, 59, 59, 0.527);
+    border: 1px solid rgb(80, 72, 72);
+}
+
+.animation {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    color: #000;
+    margin-left: -50px;
+    opacity: 0;
+    border-radius: 10px;
+    animation-name: animations;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+}
+
+.animation--1 {
+    background: url('../img/less.jpg') center/cover;
+    top: 25%;
+    transform: translateY(-25%);
+    animation-delay: 1s;
+    animation-name: animations, less;
+}
+.animation--2 {
+    background: url('../img/sass.jpg') center/cover;
+    top: 0;
+    animation-delay: 3s;
+}
+.animation--3 {
+    background: url('../img/bem.jpeg') center/cover;
+    top: 50%;
+    transform: translateY(-50%);
+    animation-name: animations, bem;
+    animation-delay: 5s;
+}
+.animation--4 {
+    background: url('../img/grid.png') center/cover;
+    top: 75%;
+    transform: translateY(-75%);
+    animation-name: animations, css-grid;
+    animation-delay: 7s;
+}
+.animation--5 {
+    background: url('../img/bootstrap.jpg') center/cover;
+    top: 100%;
+    transform: translateY(-100%);
+    animation-delay: 9s;
+}
+
+
+@keyframes animations {
+    0% {
+        opacity: 0;
+        left: 0%;
+    }
+
+    20% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        left: 90%;
+    }
+}
+
+@keyframes css-grid {
+    50% {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@keyframes less {
+    50% {
+        border-radius: 50%;
+    }
+}
+/* 
+@keyframes bem {
+    50% {
+        transform: scaleX(-1);
+    }
+} */
+
+.skills__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 30px;
+    font-weight: 700;
+    opacity: 1;
+}
+
+.skills__item {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+
+.modal__animation {
+    animation-name: fade;
+    animation-duration: 2.5s;
+}
+    @keyframes fade {
+        from {
+        opacity: 0.1;
+        }
+        to {
+        opacity: 1;
+        }
+}
+
+/* Pulse */
+
+.pulse__block {
+    position: fixed;
+    z-index: 23;
+    right: 5%;
+    bottom: 5%;
+    transform: translate(-50%, -50%);
+}
+
+.pulse {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.pulse::before, .pulse::after {
+    content: "";
+    position: absolute;
+    /* border: 1px solid rgb(247, 6, 6); */
+    border: 1px solid #fff;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    top: -20px;
+    border-radius: 50%;
+    animation: pulse 1.3s linear infinite;
+}
+
+.pulse::after {
+    animation-delay: 0.5s;
+}
+
+.pulse__phone img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+}
+
+/* My projects */
+
+.projects {
+    padding: 20px 0;
+}
+
+.projects__header {
+    margin-bottom: 40px;
+}
+
+.projects__header ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+.projects__tab {
+    cursor: pointer;
+    font-size: var(--tabSize);
+    text-transform: var(--tabTransform);
+}
+
+.project__title {
+    font-size: var(--titleSize);
+    margin-bottom: 10px;
+}
+
+.projects__item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px; 
+    padding: 10px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+}
+
+/* .projects__item:first-child::after {
+    content: '';
+    position: relative;
+}
+
+.projects__item::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    border: 1px solid #000;
+} */
+
+.projects__item-text {
+    width: 50%;
+    margin-top: 10px;
+}
+
+.projects__item-text div {
+    margin-bottom: 30px;
+}
+
+.projects__item-img {
+    width: 50%;
+    height: 250px;
+    background: rgb(76, 68, 68);
+    margin-top: 10px;
+}
+
+/* Footer */ 
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
